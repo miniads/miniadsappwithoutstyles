@@ -1,6 +1,5 @@
 import React, {useState} from 'react';
-import {TgAdsContainer} from 'miniadstest';
-import logo from './logo.svg';
+import {TgAdsContainer} from 'miniads';
 import './App.css';
 function App() {
     const [activeAdType, setActiveAdType] = useState<string | null>(null)
