@@ -2,8 +2,10 @@
 
 import React, {useState} from 'react';
 import {TgAdsContainer} from 'miniads';
+import {useTelegram} from "@/app/hooks/useTelegram/useTelegram";
 
 export default function Home() {
+  const { webApp } = useTelegram()
   const [activeAdType, setActiveAdType] = useState<string | null>(null)
   const handleBtnClick = (type: string) => {
     setActiveAdType(type)
