@@ -10,6 +10,7 @@ export default function Home() {
   const handleBtnClick = (type: string) => {
     setActiveAdType(type)
   }
+
   return (
       <div>
         {activeAdType !== 'full_screen' && (

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import React from "react";
+import Script from "next/script";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -14,8 +15,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-    <body>{children}
-    <script src="https://telegram.org/js/telegram-web-app.js" />
+    <body>
+    {children}
+    <Script src="https://telegram.org/js/telegram-web-app.js" />
     </body>
     </html>
   );

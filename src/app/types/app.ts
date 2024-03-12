@@ -1,4 +1,6 @@
 import { FC, PropsWithChildren } from 'react'
+import 'styled-components'
+
 
 declare module 'styled-components' {
   export interface DefaultTheme {
@@ -13,5 +15,4 @@ declare module 'styled-components' {
     }
   }
 }
-
 export type FCWithChildren<T = {}> = FC<PropsWithChildren<T>>
