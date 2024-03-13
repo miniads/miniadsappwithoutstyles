@@ -1,7 +1,7 @@
 'use client';
 
 import React, {useState} from 'react';
-import {TgAdsContainer} from 'miniads';
+import {TgAdsContainer} from 'miniadstest';
 import {useTelegram} from "@/app/hooks/useTelegram/useTelegram";
 
 export default function Home() {
@@ -11,7 +11,29 @@ export default function Home() {
     setActiveAdType(type)
   }
 
-  return (
+  const onLoadStart = () => {
+    console.log('Load Started')
+  }
+  const handleAdError = (e: any) => {
+    console.log('Error code', e.target.error.code)
+  }
+  const onLoadEnd = () => {
+    console.log('Load Ended')
+  }
+  const onClose = () => {
+    console.log("Closed");
+  }
+  const onClick = () => {
+    console.log("Clicked")
+  }
+  const onPlayStart = () => {
+    console.log("Video started")
+  }
+  const onPlayEnd = () => {
+    console.log("Video ended")
+  }
+
+    return (
       <div>
         {activeAdType !== 'full_screen' && (
             <div className={'buttonwraper'}>
@@ -24,7 +46,7 @@ export default function Home() {
         {activeAdType === 'banner' && (
             <TgAdsContainer
                 className={'TgAdsContainer'}
-                accessToken={"25f3bf8b-cea4-484f-8701-6f64d162de79"}
+                accessToken={"34806ff9-1e21-45b8-a222-084d544b1da9"}
                 tgInitData={''}
                 type={activeAdType}
             />
@@ -33,8 +55,15 @@ export default function Home() {
         {activeAdType === 'full_screen' && (
             <TgAdsContainer
                 className={'TgAdsContainer'}
-                accessToken={"25f3bf8b-cea4-484f-8701-6f64d162de79"}
+                accessToken={"34806ff9-1e21-45b8-a222-084d544b1da9"}
                 tgInitData={''}
+                onClick={onClick}
+                onClose={onClose}
+                onError={handleAdError}
+                onLoadEnd={onLoadEnd}
+                onLoadStart={onLoadStart}
+                onPlayEnd={onPlayEnd}
+                onPlayStart={onPlayStart}
                 type={activeAdType}
             />
         )}
