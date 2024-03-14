@@ -1,7 +1,7 @@
 'use client';
 
 import React, {useState} from 'react';
-import {TgAdsContainer} from 'alternativeplayerminiads';
+import {TgAdsContainer} from 'miniadstest';
 import {useTelegram} from "@/app/hooks/useTelegram/useTelegram";
 
 export default function Home() {
@@ -47,7 +47,7 @@ export default function Home() {
         {activeAdType === 'banner' && (
             <TgAdsContainer
                 className={'TgAdsContainer'}
-                accessToken={"34806ff9-1e21-45b8-a222-084d544b1da9"}
+                accessToken={"8703441f-3369-4798-9bc4-a6e837d1611b"}
                 tgInitData={''}
                 type={activeAdType}
             />
@@ -56,7 +56,7 @@ export default function Home() {
         {activeAdType === 'full_screen' && (
             <TgAdsContainer
                 className={'TgAdsContainer'}
-                accessToken={"34806ff9-1e21-45b8-a222-084d544b1da9"}
+                accessToken={"8703441f-3369-4798-9bc4-a6e837d1611b"}
                 tgInitData={''}
                 onClick={onClick}
                 onClose={onClose}
