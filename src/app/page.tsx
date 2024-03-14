@@ -1,7 +1,7 @@
 'use client';
 
 import React, {useState} from 'react';
-import {TgAdsContainer} from 'miniadstest';
+import {TgAdsContainer} from 'alternativeplayerminiads';
 import {useTelegram} from "@/app/hooks/useTelegram/useTelegram";
 
 export default function Home() {
@@ -31,6 +31,7 @@ export default function Home() {
   }
   const onPlayEnd = () => {
     console.log("Video ended")
+    setActiveAdType(null)
   }
 
     return (
