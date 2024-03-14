@@ -1,7 +1,7 @@
 'use client';
 
 import React, {useState} from 'react';
-import {TgAdsContainer} from 'miniadstest';
+import {TgAdsContainer} from 'miniads';
 import {useTelegram} from "@/app/hooks/useTelegram/useTelegram";
 
 export default function Home() {
