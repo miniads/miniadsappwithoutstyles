@@ -1,13 +1,14 @@
 'use client';
 
 import React, {useState} from 'react';
-import {TgAdsContainer} from 'miniads';
+import {TgAdsContainer} from 'miniadstest';
 import {useTelegram} from "@/app/hooks/useTelegram/useTelegram";
 
 export default function Home() {
   const { webApp } = useTelegram()
   const [activeAdType, setActiveAdType] = useState<string | null>(null)
   const handleBtnClick = (type: string) => {
+    console.log(activeAdType)
     setActiveAdType(type)
   }
 
@@ -22,6 +23,7 @@ export default function Home() {
   }
   const onClose = () => {
     console.log("Closed");
+    setActiveAdType(null);
   }
   const onClick = () => {
     console.log("Clicked")
@@ -50,6 +52,7 @@ export default function Home() {
                 accessToken={"8703441f-3369-4798-9bc4-a6e837d1611b"}
                 tgInitData={''}
                 type={activeAdType}
+                onClose={onClose}
             />
         )}
 
